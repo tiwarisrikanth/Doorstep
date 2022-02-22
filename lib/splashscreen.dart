@@ -1,11 +1,9 @@
 import 'dart:async';
-
-import 'package:doorstep/screen/auth/login_screen.dart';
-import 'package:doorstep/screen/constant/color_const.dart';
+import 'package:doorstep/Screens/Login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({Key key}) : super(key: key);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -25,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const LoginPage(),
+          builder: (context) => LoginScreen(),
         ),
       ),
     );
@@ -41,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
     //       ),
     // );
     return Scaffold(
-      backgroundColor: colorDarkBlue,
+      backgroundColor: Color(0xFF0C0733),
       body: Center(
         child: Image.asset('assets/images/logo2.png'),
       ),
