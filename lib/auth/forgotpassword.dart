@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:doorstep/auth/changepassword.dart';
+import 'package:doorstep/constant/colorconstant.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -94,7 +95,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     decoration: InputDecoration(
                       prefixIcon: Icon(
                         Icons.email_outlined,
-                        color: Colors.green,
+                        color: primaryColor,
                       ),
                       labelText: 'Email',
                       labelStyle: TextStyle(
@@ -103,7 +104,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           color: Colors.grey),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: Colors.green,
+                          color: primaryColor,
                         ),
                       ),
                     ),
@@ -151,8 +152,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             },
                             child: Material(
                               borderRadius: BorderRadius.circular(5.0),
-                              shadowColor: Colors.greenAccent,
-                              color: Colors.green,
+                              shadowColor: primaryColor,
+                              color: primaryColor,
                               elevation: 7.0,
                               child: GestureDetector(
                                 onTap: () {
@@ -269,7 +270,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 child: PinCodeTextField(
                   appContext: context,
                   pastedTextStyle: TextStyle(
-                    color: Colors.green.shade600,
+                    color: primaryColor.withOpacity(0.3),
                     fontWeight: FontWeight.bold,
                   ),
                   length: 6,
@@ -361,8 +362,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     },
                     child: Material(
                       borderRadius: BorderRadius.circular(5.0),
-                      shadowColor: Colors.greenAccent,
-                      color: Colors.green,
+                      shadowColor: primaryColor,
+                      color: primaryColor,
                       elevation: 7.0,
                       child: GestureDetector(
                         onTap: () {

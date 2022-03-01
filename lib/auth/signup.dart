@@ -1,3 +1,4 @@
+import 'package:doorstep/constant/colorconstant.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
@@ -38,7 +39,7 @@ class _SignupPageState extends State<SignupPage> {
                       width: 20,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
-                        color: Colors.green,
+                        color: primaryColor,
                       ),
                     ),
                   ),
@@ -54,7 +55,7 @@ class _SignupPageState extends State<SignupPage> {
                     decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.person_outline,
-                          color: Colors.green,
+                          color: primaryColor,
                         ),
                         labelText: 'Name ',
                         labelStyle: TextStyle(
@@ -62,14 +63,14 @@ class _SignupPageState extends State<SignupPage> {
                             fontWeight: FontWeight.bold,
                             color: Colors.grey),
                         focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.green))),
+                            borderSide: BorderSide(color: primaryColor))),
                   ),
                   SizedBox(height: 10.0),
                   TextField(
                     decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.phone_outlined,
-                          color: Colors.green,
+                          color: primaryColor,
                         ),
                         labelText: 'Mobile',
                         labelStyle: TextStyle(
@@ -79,14 +80,14 @@ class _SignupPageState extends State<SignupPage> {
                         // hintText: 'EMAIL',
                         // hintStyle: ,
                         focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.green))),
+                            borderSide: BorderSide(color: primaryColor))),
                   ),
                   SizedBox(height: 10.0),
                   TextField(
                     decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.email_outlined,
-                          color: Colors.green,
+                          color: primaryColor,
                         ),
                         labelText: 'Email',
                         labelStyle: TextStyle(
@@ -94,7 +95,7 @@ class _SignupPageState extends State<SignupPage> {
                             fontWeight: FontWeight.bold,
                             color: Colors.grey),
                         focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.green))),
+                            borderSide: BorderSide(color: primaryColor))),
                   ),
                   SizedBox(height: 10.0),
                   TextField(
@@ -102,7 +103,7 @@ class _SignupPageState extends State<SignupPage> {
                     decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.password_outlined,
-                          color: Colors.green,
+                          color: primaryColor,
                         ),
                         suffixIcon: Icon(Icons.visibility),
                         labelText: 'Password ',
@@ -111,14 +112,14 @@ class _SignupPageState extends State<SignupPage> {
                             fontWeight: FontWeight.bold,
                             color: Colors.grey),
                         focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.green))),
+                            borderSide: BorderSide(color: primaryColor))),
                   ),
                   SizedBox(height: 5.0),
                   Row(
                     children: [
                       Material(
                         child: Checkbox(
-                          activeColor: Colors.green,
+                          activeColor: primaryColor,
                           value: agree,
                           onChanged: (value) {
                             setState(() {
@@ -146,8 +147,8 @@ class _SignupPageState extends State<SignupPage> {
                       height: 40.0,
                       child: Material(
                         borderRadius: BorderRadius.circular(20.0),
-                        shadowColor: Colors.greenAccent,
-                        color: Colors.green,
+                        shadowColor: primaryColor,
+                        color: primaryColor,
                         elevation: 7.0,
                         child: GestureDetector(
                           onTap: () {},
@@ -178,7 +179,7 @@ class _SignupPageState extends State<SignupPage> {
                         child: Text(
                           'Login',
                           style: TextStyle(
-                              color: Colors.green,
+                              color: primaryColor,
                               fontFamily: 'MonM',
                               fontWeight: FontWeight.bold,
                               decoration: TextDecoration.underline),
@@ -202,7 +203,7 @@ class _SignupPageState extends State<SignupPage> {
           //     InkWell(
           //       child: Text('Register',
           //           style: TextStyle(
-          //               color: Colors.green,
+          //               color: primaryColor,
           //               fontFamily: 'Montserrat',
           //               fontWeight: FontWeight.bold,
           //               decoration: TextDecoration.underline)),

@@ -1,4 +1,5 @@
 import 'package:doorstep/auth/loginpage.dart';
+import 'package:doorstep/constant/colorconstant.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -66,7 +67,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                       suffixIcon: Icon(Icons.visibility),
                       prefixIcon: Icon(
                         Icons.password,
-                        color: Colors.green,
+                        color: primaryColor,
                       ),
                       labelText: 'New Password',
                       labelStyle: TextStyle(
@@ -75,7 +76,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                           color: Colors.grey),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: Colors.green,
+                          color: primaryColor,
                         ),
                       ),
                     ),
@@ -87,7 +88,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                       suffixIcon: Icon(Icons.visibility),
                       prefixIcon: Icon(
                         Icons.password_outlined,
-                        color: Colors.green,
+                        color: primaryColor,
                       ),
                       labelText: 'Change Password',
                       labelStyle: TextStyle(
@@ -96,7 +97,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                           color: Colors.grey),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: Colors.green,
+                          color: primaryColor,
                         ),
                       ),
                     ),
@@ -148,8 +149,8 @@ class _ChangePasswordState extends State<ChangePassword> {
                             },
                             child: Material(
                               borderRadius: BorderRadius.circular(5.0),
-                              shadowColor: Colors.greenAccent,
-                              color: Colors.green,
+                              shadowColor: primaryColor,
+                              color: primaryColor,
                               elevation: 7.0,
                               child: GestureDetector(
                                 onTap: () {

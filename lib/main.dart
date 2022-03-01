@@ -1,4 +1,5 @@
 import 'package:doorstep/auth/loginpage.dart';
+import 'package:doorstep/constant/colorconstant.dart';
 import 'package:doorstep/splashscreen.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      color: white,
       routes: <String, WidgetBuilder>{
         '/signup': (BuildContext context) => SignupPage()
       },

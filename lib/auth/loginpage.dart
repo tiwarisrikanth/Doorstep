@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
+              children: [
                 Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                             width: 12,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50),
-                              color: Colors.green,
+                              color: primaryColor,
                             ),
                           ),
                         ],
@@ -66,12 +66,12 @@ class _LoginPageState extends State<LoginPage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          const TextField(
-                            cursorColor: Colors.green,
+                          TextField(
+                            cursorColor: primaryColor,
                             decoration: InputDecoration(
                               prefixIcon: Icon(
                                 Icons.email_outlined,
-                                color: Colors.green,
+                                color: primaryColor,
                               ),
                               labelText: 'Email',
                               labelStyle: TextStyle(
@@ -80,19 +80,19 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Colors.grey),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Colors.green,
+                                  color: primaryColor,
                                 ),
                               ),
                             ),
                           ),
                           const SizedBox(height: 20.0),
-                          const TextField(
-                            cursorColor: Colors.green,
+                          TextField(
+                            cursorColor: primaryColor,
                             decoration: InputDecoration(
                               suffixIcon: Icon(Icons.visibility),
                               prefixIcon: Icon(
                                 Icons.password,
-                                color: Colors.green,
+                                color: primaryColor,
                               ),
                               labelText: 'Password',
                               labelStyle: TextStyle(
@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Colors.green,
+                                  color: primaryColor,
                                 ),
                               ),
                             ),
@@ -113,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                             children: [
                               Material(
                                 child: Checkbox(
-                                  activeColor: Colors.green,
+                                  activeColor: primaryColor,
                                   value: agree,
                                   onChanged: (value) {
                                     setState(() {
@@ -148,11 +148,11 @@ class _LoginPageState extends State<LoginPage> {
                               alignment: const Alignment(1.0, 0.0),
                               padding:
                                   const EdgeInsets.only(top: 15.0, left: 20.0),
-                              child: const InkWell(
+                              child: InkWell(
                                 child: Text(
                                   'Forgot Password',
                                   style: TextStyle(
-                                    color: Colors.green,
+                                    color: primaryColor,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'MonM',
                                     decoration: TextDecoration.underline,
@@ -175,8 +175,8 @@ class _LoginPageState extends State<LoginPage> {
                               height: 40.0,
                               child: Material(
                                 borderRadius: BorderRadius.circular(20.0),
-                                shadowColor: Colors.greenAccent,
-                                color: Colors.green,
+                                shadowColor: primaryColor,
+                                color: primaryColor,
                                 elevation: 7.0,
                                 child: GestureDetector(
                                   onTap: () {
@@ -249,7 +249,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: Text(
                         'Register',
                         style: TextStyle(
-                            color: Colors.green,
+                            color: primaryColor,
                             fontFamily: 'MonM',
                             fontWeight: FontWeight.bold,
                             decoration: TextDecoration.underline),

@@ -36,8 +36,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   pin_code_fields: ^7.3.0
   timer_button: ^2.0.0
+  fluttertoast: ^8.0.8
   flutter_svg: ^1.0.3
+  flip_card: ^0.6.0
   lottie: ^1.2.2
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:
