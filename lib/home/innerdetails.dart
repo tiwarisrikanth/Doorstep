@@ -1,6 +1,7 @@
 import 'package:doorstep/constant/colorconstant.dart';
 import 'package:floating_action_bubble/floating_action_bubble.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class InnerDetails extends StatefulWidget {
   final String title;
@@ -14,6 +15,7 @@ class InnerDetails extends StatefulWidget {
 
 class _InnerDetailsState extends State<InnerDetails>
     with SingleTickerProviderStateMixin {
+  ValueNotifier<bool> isDialOpen = ValueNotifier(false);
   Animation<double>? _animation;
   AnimationController? _animationController;
   @override
@@ -104,64 +106,38 @@ class _InnerDetailsState extends State<InnerDetails>
           child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: FloatingActionBubble(
-                    // Menu items
-                    items: <Bubble>[
-                      // Floating action menu item
-                      Bubble(
-                        title: "Settings",
-                        iconColor: Colors.white,
-                        bubbleColor: Colors.blue,
-                        icon: Icons.settings,
-                        titleStyle:
-                            TextStyle(fontSize: 16, color: Colors.white),
-                        onPress: () {
-                          _animationController!.reverse();
-                        },
+                alignment: Alignment.bottomRight,
+                child: SpeedDial(
+                  animatedIcon: AnimatedIcons.menu_close,
+                  openCloseDial: isDialOpen,
+                  backgroundColor: primaryColor,
+                  overlayColor: Colors.black54,
+                  overlayOpacity: 0.5,
+                  curve: Curves.easeInCubic,
+                  spacing: 10,
+                  elevation: 19,
+                  spaceBetweenChildren: 10,
+                  closeManually: true,
+                  children: [
+                    SpeedDialChild(
+                      child: const Icon(
+                        Icons.add,
+                        color: Colors.white,
                       ),
-                      // Floating action menu item
-                      Bubble(
-                        title: "Profile",
-                        iconColor: Colors.white,
-                        bubbleColor: Colors.blue,
-                        icon: Icons.people,
-                        titleStyle:
-                            TextStyle(fontSize: 16, color: Colors.white),
-                        onPress: () {
-                          _animationController!.reverse();
-                        },
+                      label: 'Add Expected Items',
+                      backgroundColor: primaryColor,
+                      labelStyle: const TextStyle(
+                        color: Colors.black,
+                        fontFamily: 'monR',
+                        fontSize: 12,
                       ),
-                      //Floating action menu item
-                      Bubble(
-                        title: "Home",
-                        iconColor: Colors.white,
-                        bubbleColor: Colors.blue,
-                        icon: Icons.home,
-                        titleStyle:
-                            TextStyle(fontSize: 16, color: Colors.white),
-                        onPress: () {
-                          // Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => Homepage()));
-                          _animationController!.reverse();
-                        },
-                      ),
-                    ],
-
-                    // animation controller
-                    animation: _animation!,
-
-                    // On pressed change animation state
-                    onPress: () => _animationController!.isCompleted
-                        ? _animationController!.reverse()
-                        : _animationController!.forward(),
-
-                    // Floating Action button Icon color
-                    iconColor: Colors.blue,
-
-                    // Flaoting Action button Icon
-                    iconData: Icons.ac_unit,
-                    backGroundColor: Colors.white,
-                  ))),
+                      onTap: () {
+                        print('Share Tapped');
+                      },
+                    ),
+                  ],
+                ),
+              )),
         ),
       ],
     );

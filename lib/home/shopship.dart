@@ -1,6 +1,7 @@
 import 'package:doorstep/constant/colorconstant.dart';
 import 'package:doorstep/repositories/shopshiprepo.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class ShopShip extends StatefulWidget {
   final String title;
@@ -12,7 +13,9 @@ class ShopShip extends StatefulWidget {
   _ShopShipState createState() => _ShopShipState();
 }
 
-class _ShopShipState extends State<ShopShip> {
+class _ShopShipState extends State<ShopShip>
+    with SingleTickerProviderStateMixin {
+  ValueNotifier<bool> isDialOpen = ValueNotifier(false);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,11 +116,35 @@ class _ShopShipState extends State<ShopShip> {
             padding: const EdgeInsets.all(8.0),
             child: Align(
               alignment: Alignment.bottomRight,
-              child: FloatingActionButton.extended(
+              child: SpeedDial(
+                animatedIcon: AnimatedIcons.menu_close,
+                openCloseDial: isDialOpen,
                 backgroundColor: primaryColor,
-                onPressed: () {},
-                label: Text("Add Request"),
-                icon: Icon(Icons.add),
+                overlayColor: Colors.black54,
+                overlayOpacity: 0.5,
+                curve: Curves.easeInCubic,
+                spacing: 10,
+                elevation: 19,
+                spaceBetweenChildren: 10,
+                closeManually: true,
+                children: [
+                  SpeedDialChild(
+                    child: const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                    label: 'Add Request',
+                    backgroundColor: primaryColor,
+                    labelStyle: const TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'monR',
+                      fontSize: 12,
+                    ),
+                    onTap: () {
+                      print('Share Tapped');
+                    },
+                  ),
+                ],
               ),
             ),
           ),
@@ -146,11 +173,35 @@ class _ShopShipState extends State<ShopShip> {
             padding: const EdgeInsets.all(8.0),
             child: Align(
               alignment: Alignment.bottomRight,
-              child: FloatingActionButton.extended(
+              child: SpeedDial(
+                animatedIcon: AnimatedIcons.menu_close,
+                openCloseDial: isDialOpen,
                 backgroundColor: primaryColor,
-                onPressed: () {},
-                label: Text("Add Request"),
-                icon: Icon(Icons.add),
+                overlayColor: Colors.black54,
+                overlayOpacity: 0.5,
+                curve: Curves.easeInCubic,
+                spacing: 10,
+                elevation: 19,
+                spaceBetweenChildren: 10,
+                closeManually: true,
+                children: [
+                  SpeedDialChild(
+                    child: const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                    label: 'Add Request',
+                    backgroundColor: primaryColor,
+                    labelStyle: const TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'monR',
+                      fontSize: 12,
+                    ),
+                    onTap: () {
+                      print('Share Tapped');
+                    },
+                  ),
+                ],
               ),
             ),
           ),
@@ -179,11 +230,35 @@ class _ShopShipState extends State<ShopShip> {
             padding: const EdgeInsets.all(8.0),
             child: Align(
               alignment: Alignment.bottomRight,
-              child: FloatingActionButton.extended(
+              child: SpeedDial(
+                animatedIcon: AnimatedIcons.menu_close,
+                openCloseDial: isDialOpen,
                 backgroundColor: primaryColor,
-                onPressed: () {},
-                label: Text("Add Request"),
-                icon: Icon(Icons.add),
+                overlayColor: Colors.black54,
+                overlayOpacity: 0.5,
+                curve: Curves.easeInCubic,
+                spacing: 10,
+                elevation: 19,
+                spaceBetweenChildren: 10,
+                closeManually: true,
+                children: [
+                  SpeedDialChild(
+                    child: const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                    label: 'Add Request',
+                    backgroundColor: primaryColor,
+                    labelStyle: const TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'monR',
+                      fontSize: 12,
+                    ),
+                    onTap: () {
+                      print('Share Tapped');
+                    },
+                  ),
+                ],
               ),
             ),
           ),
@@ -212,11 +287,35 @@ class _ShopShipState extends State<ShopShip> {
             padding: const EdgeInsets.all(8.0),
             child: Align(
               alignment: Alignment.bottomRight,
-              child: FloatingActionButton.extended(
+              child: SpeedDial(
+                animatedIcon: AnimatedIcons.menu_close,
+                openCloseDial: isDialOpen,
                 backgroundColor: primaryColor,
-                onPressed: () {},
-                label: Text("Add Request"),
-                icon: Icon(Icons.add),
+                overlayColor: Colors.black54,
+                overlayOpacity: 0.5,
+                curve: Curves.easeInCubic,
+                spacing: 10,
+                elevation: 19,
+                spaceBetweenChildren: 10,
+                closeManually: true,
+                children: [
+                  SpeedDialChild(
+                    child: const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                    label: 'Add Request',
+                    backgroundColor: primaryColor,
+                    labelStyle: const TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'monR',
+                      fontSize: 12,
+                    ),
+                    onTap: () {
+                      print('Share Tapped');
+                    },
+                  ),
+                ],
               ),
             ),
           ),
@@ -245,11 +344,35 @@ class _ShopShipState extends State<ShopShip> {
             padding: const EdgeInsets.all(8.0),
             child: Align(
               alignment: Alignment.bottomRight,
-              child: FloatingActionButton.extended(
+              child: SpeedDial(
+                animatedIcon: AnimatedIcons.menu_close,
+                openCloseDial: isDialOpen,
                 backgroundColor: primaryColor,
-                onPressed: () {},
-                label: Text("Add Request"),
-                icon: Icon(Icons.add),
+                overlayColor: Colors.black54,
+                overlayOpacity: 0.5,
+                curve: Curves.easeInCubic,
+                spacing: 10,
+                elevation: 19,
+                spaceBetweenChildren: 10,
+                closeManually: true,
+                children: [
+                  SpeedDialChild(
+                    child: const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                    label: 'Add Request',
+                    backgroundColor: primaryColor,
+                    labelStyle: const TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'monR',
+                      fontSize: 12,
+                    ),
+                    onTap: () {
+                      print('Share Tapped');
+                    },
+                  ),
+                ],
               ),
             ),
           ),

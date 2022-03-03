@@ -108,6 +108,50 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             obscureText: true,
                           ),
+                          const SizedBox(height: 20.0),
+                          TextField(
+                            cursorColor: primaryColor,
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(
+                                Icons.location_on,
+                                color: primaryColor,
+                              ),
+                              labelText: 'Address Resgister',
+                              labelStyle: TextStyle(
+                                fontFamily: 'MonM',
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey,
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: primaryColor,
+                                ),
+                              ),
+                            ),
+                            obscureText: true,
+                          ),
+                          const SizedBox(height: 20.0),
+                          TextField(
+                            cursorColor: primaryColor,
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(
+                                Icons.location_on,
+                                color: primaryColor,
+                              ),
+                              labelText: 'Address Resgister',
+                              labelStyle: TextStyle(
+                                fontFamily: 'MonM',
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey,
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: primaryColor,
+                                ),
+                              ),
+                            ),
+                            obscureText: true,
+                          ),
                           SizedBox(height: 5.0),
                           Row(
                             children: [

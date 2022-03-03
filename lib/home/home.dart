@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      new MaterialPageRoute(
+                      MaterialPageRoute(
                         builder: (context) => const ViewDetails(
                           title: 'Locker Details',
                         ),

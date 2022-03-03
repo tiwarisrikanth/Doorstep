@@ -59,7 +59,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        new MaterialPageRoute(
+                        MaterialPageRoute(
                           builder: (context) => const InnerDetails(
                             title: 'Locker Address',
                             id: 1,
@@ -558,14 +558,16 @@ class _ViewDetailsState extends State<ViewDetails> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Expanded(
+        child: Container(
+          height: MediaQuery.of(context).size.height / 1.5,
+          child: Column(
+            children: [
+              Expanded(
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -578,47 +580,60 @@ class _ViewDetailsState extends State<ViewDetails> {
                         ),
                       );
                     },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      elevation: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        height: MediaQuery.of(context).size.height / 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/images/shopbyyourself.png',
-                                width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.greenAccent.withOpacity(0.2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/shopbyyourself.png',
+                                  height: 50,
+                                ),
                               ),
                             ),
-                            // ignore: sized_box_for_whitespace
-                            Container(
-                              width: MediaQuery.of(context).size.width / 3,
-                              child: const Text(
-                                "Shop By Yourself",
-                                style: TextStyle(
-                                    fontFamily: 'MonS',
-                                    fontSize: 15,
-                                    color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            // width: MediaQuery.of(context).size.width / 3,
+                            child: const Text(
+                              "Shop By Yourself",
+                              style: const TextStyle(
+                                  fontFamily: 'MonS',
+                                  fontSize: 15,
+                                  color: Colors.black),
+                              textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
+              ),
+              Expanded(
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -631,51 +646,61 @@ class _ViewDetailsState extends State<ViewDetails> {
                         ),
                       );
                     },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      elevation: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        height: MediaQuery.of(context).size.height / 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/images/availpersonal.png',
-                                width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.orangeAccent.withOpacity(0.2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/availpersonal.png',
+                                  height: 50,
+                                ),
                               ),
                             ),
-                            // ignore: sized_box_for_whitespace
-                            Container(
-                              width: MediaQuery.of(context).size.width / 3,
-                              child: const Text(
-                                "Avail Personal Shopper",
-                                style: TextStyle(
-                                    fontFamily: 'MonS',
-                                    fontSize: 15,
-                                    color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            // width: MediaQuery.of(context).size.width / 3,
+                            child: const Text(
+                              "Avail Personal Shopper",
+                              style: const TextStyle(
+                                  fontFamily: 'MonS',
+                                  fontSize: 15,
+                                  color: Colors.black),
+                              textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Expanded(
+              ),
+              //Here
+              Expanded(
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -688,47 +713,60 @@ class _ViewDetailsState extends State<ViewDetails> {
                         ),
                       );
                     },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      elevation: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        height: MediaQuery.of(context).size.height / 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/images/requestpickup.png',
-                                width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.blue.withOpacity(0.2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/requestpickup.png',
+                                  height: 50,
+                                ),
                               ),
                             ),
-                            // ignore: sized_box_for_whitespace
-                            Container(
-                              width: MediaQuery.of(context).size.width / 3,
-                              child: const Text(
-                                "Request Package Pickup",
-                                style: TextStyle(
-                                    fontFamily: 'MonS',
-                                    fontSize: 15,
-                                    color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            // width: MediaQuery.of(context).size.width / 3,
+                            child: const Text(
+                              "Request Package Pickup",
+                              style: const TextStyle(
+                                  fontFamily: 'MonS',
+                                  fontSize: 15,
+                                  color: Colors.black),
+                              textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
+              ),
+              Expanded(
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -741,51 +779,59 @@ class _ViewDetailsState extends State<ViewDetails> {
                         ),
                       );
                     },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      elevation: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        height: MediaQuery.of(context).size.height / 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/images/requestsewing.png',
-                                width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: primaryColor.withOpacity(0.2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Image.asset(
+                                    'assets/images/requestsewing.png',
+                                    height: 50),
                               ),
                             ),
-                            // ignore: sized_box_for_whitespace
-                            Container(
-                              width: MediaQuery.of(context).size.width / 3,
-                              child: const Text(
-                                "Request Tailoring",
-                                style: TextStyle(
-                                    fontFamily: 'MonS',
-                                    fontSize: 15,
-                                    color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            // width: MediaQuery.of(context).size.width / 3,
+                            child: const Text(
+                              "Request Tailoring",
+                              style: const TextStyle(
+                                  fontFamily: 'MonS',
+                                  fontSize: 15,
+                                  color: Colors.black),
+                              textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Expanded(
+              ),
+              Expanded(
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -798,47 +844,59 @@ class _ViewDetailsState extends State<ViewDetails> {
                         ),
                       );
                     },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      elevation: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        height: MediaQuery.of(context).size.height / 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/images/requestmedicine.png',
-                                width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.blue.withOpacity(0.2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Image.asset(
+                                    'assets/images/requestmedicine.png',
+                                    height: 50),
                               ),
                             ),
-                            // ignore: sized_box_for_whitespace
-                            Container(
-                              width: MediaQuery.of(context).size.width / 3,
-                              child: const Text(
-                                "Request Medicines",
-                                style: TextStyle(
-                                    fontFamily: 'MonS',
-                                    fontSize: 15,
-                                    color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            // width: MediaQuery.of(context).size.width / 3,
+                            child: const Text(
+                              "Request Medicine",
+                              style: const TextStyle(
+                                  fontFamily: 'MonS',
+                                  fontSize: 15,
+                                  color: Colors.black),
+                              textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
+              ),
+              Expanded(
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -851,49 +909,389 @@ class _ViewDetailsState extends State<ViewDetails> {
                         ),
                       );
                     },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      elevation: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        height: MediaQuery.of(context).size.height / 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/images/requestrandom.png',
-                                width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: primaryColor.withOpacity(0.2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Image.asset(
+                                    'assets/images/requestrandom.png',
+                                    height: 50),
                               ),
                             ),
-                            // ignore: sized_box_for_whitespace
-                            Container(
-                              width: MediaQuery.of(context).size.width / 3,
-                              child: const Text(
-                                "Request Anything",
-                                style: TextStyle(
-                                    fontFamily: 'MonS',
-                                    fontSize: 15,
-                                    color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            // width: MediaQuery.of(context).size.width / 3,
+                            child: const Text(
+                              "Request Anything",
+                              style: const TextStyle(
+                                  fontFamily: 'MonS',
+                                  fontSize: 15,
+                                  color: Colors.black),
+                              textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                   ),
                 ),
-              ],
-            )
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );
+
+    // const SizedBox(
+    //   height: 10,
+    // ),
+    // Row(
+    //   children: [
+    //     Expanded(
+    //       child: InkWell(
+    //         onTap: () {
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) => ShopShip(
+    //       title: 'Shop By Yourself',
+    //       id: 0,
+    //     ),
+    //   ),
+    // );
+    //         },
+    //         child: Card(
+    //           shape: RoundedRectangleBorder(
+    //             borderRadius: BorderRadius.circular(20),
+    //           ),
+    //           elevation: 3,
+    //           child: Container(
+    //             decoration: BoxDecoration(
+    //               borderRadius: BorderRadius.circular(20),
+    //             ),
+    //             height: MediaQuery.of(context).size.height / 4,
+    //             child: Column(
+    //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //               children: [
+    //                 Center(
+    //                   child: Image.asset(
+    //                     'assets/images/shopbyyourself.png',
+    //                     width: MediaQuery.of(context).size.width / 4,
+    //                   ),
+    //                 ),
+    //                 // ignore: sized_box_for_whitespace
+    //                 Container(
+    //                   width: MediaQuery.of(context).size.width / 3,
+    //                   child: const Text(
+    //                     "Shop By Yourself",
+    //                     style: TextStyle(
+    //                         fontFamily: 'MonS',
+    //                         fontSize: 15,
+    //                         color: Colors.black),
+    //                     textAlign: TextAlign.center,
+    //                   ),
+    //                 ),
+    //               ],
+    //             ),
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //     const SizedBox(
+    //       width: 20,
+    //     ),
+    //     Expanded(
+    //       child: InkWell(
+    //         onTap: () {
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) => ShopShip(
+    //       title: 'Avail Personal Shopper',
+    //       id: 1,
+    //     ),
+    //   ),
+    // );
+    //         },
+    //         child: Card(
+    //           shape: RoundedRectangleBorder(
+    //             borderRadius: BorderRadius.circular(20),
+    //           ),
+    //           elevation: 3,
+    //           child: Container(
+    //             decoration: BoxDecoration(
+    //               borderRadius: BorderRadius.circular(20),
+    //             ),
+    //             height: MediaQuery.of(context).size.height / 4,
+    //             child: Column(
+    //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //               children: [
+    //                 Center(
+    //                   child: Image.asset(
+    //                     'assets/images/availpersonal.png',
+    //                     width: MediaQuery.of(context).size.width / 4,
+    //                   ),
+    //                 ),
+    //                 // ignore: sized_box_for_whitespace
+    //                 Container(
+    //                   width: MediaQuery.of(context).size.width / 3,
+    //                   child: const Text(
+    //                     "Avail Personal Shopper",
+    //                     style: TextStyle(
+    //                         fontFamily: 'MonS',
+    //                         fontSize: 15,
+    //                         color: Colors.black),
+    //                     textAlign: TextAlign.center,
+    //                   ),
+    //                 ),
+    //               ],
+    //             ),
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //   ],
+    // ),
+    // const SizedBox(
+    //   height: 10,
+    // ),
+    // Row(
+    //   children: [
+    //     Expanded(
+    //       child: InkWell(
+    //         onTap: () {
+    //           Navigator.push(
+    //             context,
+    //             MaterialPageRoute(
+    //               builder: (context) => ShopShip(
+    //                 title: 'Request Package Pick Up',
+    //                 id: 2,
+    //               ),
+    //             ),
+    //           );
+    //         },
+    //         child: Card(
+    //           shape: RoundedRectangleBorder(
+    //             borderRadius: BorderRadius.circular(20),
+    //           ),
+    //           elevation: 3,
+    //           child: Container(
+    //             decoration: BoxDecoration(
+    //               borderRadius: BorderRadius.circular(20),
+    //             ),
+    //             height: MediaQuery.of(context).size.height / 4,
+    //             child: Column(
+    //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //               children: [
+    // Center(
+    //   child: Image.asset(
+    //     'assets/images/requestpickup.png',
+    //     width: MediaQuery.of(context).size.width / 4,
+    //   ),
+    // ),
+    //                 // ignore: sized_box_for_whitespace
+    //                 Container(
+    //                   width: MediaQuery.of(context).size.width / 3,
+    //                   child: const Text(
+    //                     "Request Package Pickup",
+    //                     style: TextStyle(
+    //                         fontFamily: 'MonS',
+    //                         fontSize: 15,
+    //                         color: Colors.black),
+    //                     textAlign: TextAlign.center,
+    //                   ),
+    //                 ),
+    //               ],
+    //             ),
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //     const SizedBox(
+    //       width: 20,
+    //     ),
+    //     Expanded(
+    //       child: InkWell(
+    //         onTap: () {
+    //           Navigator.push(
+    //             context,
+    //             MaterialPageRoute(
+    //               builder: (context) => ShopShip(
+    //                 title: 'Request Tailoring',
+    //                 id: 3,
+    //               ),
+    //             ),
+    //           );
+    //         },
+    //         child: Card(
+    //           shape: RoundedRectangleBorder(
+    //             borderRadius: BorderRadius.circular(20),
+    //           ),
+    //           elevation: 3,
+    //           child: Container(
+    //             decoration: BoxDecoration(
+    //               borderRadius: BorderRadius.circular(20),
+    //             ),
+    //             height: MediaQuery.of(context).size.height / 4,
+    //             child: Column(
+    //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //               children: [
+    // Center(
+    //   child: Image.asset(
+    //     'assets/images/requestsewing.png',
+    //     width: MediaQuery.of(context).size.width / 4,
+    //   ),
+    // ),
+    //                 // ignore: sized_box_for_whitespace
+    //                 Container(
+    //                   width: MediaQuery.of(context).size.width / 3,
+    //                   child: const Text(
+    //                     "Request Tailoring",
+    //                     style: TextStyle(
+    //                         fontFamily: 'MonS',
+    //                         fontSize: 15,
+    //                         color: Colors.black),
+    //                     textAlign: TextAlign.center,
+    //                   ),
+    //                 ),
+    //               ],
+    //             ),
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //   ],
+    // ),
+    // const SizedBox(
+    //   height: 10,
+    // ),
+    // Row(
+    //   children: [
+    //     Expanded(
+    //       child: InkWell(
+    //         onTap: () {
+    //           Navigator.push(
+    //             context,
+    //             MaterialPageRoute(
+    //               builder: (context) => ShopShip(
+    //                 title: 'Request Medicine',
+    //                 id: 4,
+    //               ),
+    //             ),
+    //           );
+    //         },
+    //         child: Card(
+    //           shape: RoundedRectangleBorder(
+    //             borderRadius: BorderRadius.circular(20),
+    //           ),
+    //           elevation: 3,
+    //           child: Container(
+    //             decoration: BoxDecoration(
+    //               borderRadius: BorderRadius.circular(20),
+    //             ),
+    //             height: MediaQuery.of(context).size.height / 4,
+    //             child: Column(
+    //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //               children: [
+    // Center(
+    //   child: Image.asset(
+    //     'assets/images/requestmedicine.png',
+    //     width: MediaQuery.of(context).size.width / 4,
+    //   ),
+    // ),
+    //                 // ignore: sized_box_for_whitespace
+    //                 Container(
+    //                   width: MediaQuery.of(context).size.width / 3,
+    //                   child: const Text(
+    //                     "Request Medicines",
+    //                     style: TextStyle(
+    //                         fontFamily: 'MonS',
+    //                         fontSize: 15,
+    //                         color: Colors.black),
+    //                     textAlign: TextAlign.center,
+    //                   ),
+    //                 ),
+    //               ],
+    //             ),
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //     const SizedBox(
+    //       width: 20,
+    //     ),
+    //     Expanded(
+    //       child: InkWell(
+    //         onTap: () {
+    //           Navigator.push(
+    //             context,
+    //             MaterialPageRoute(
+    //               builder: (context) => ShopShip(
+    //                 title: 'Request Anything',
+    //                 id: 5,
+    //               ),
+    //             ),
+    //           );
+    //         },
+    //         child: Card(
+    //           shape: RoundedRectangleBorder(
+    //             borderRadius: BorderRadius.circular(20),
+    //           ),
+    //           elevation: 3,
+    //           child: Container(
+    //             decoration: BoxDecoration(
+    //               borderRadius: BorderRadius.circular(20),
+    //             ),
+    //             height: MediaQuery.of(context).size.height / 4,
+    //             child: Column(
+    //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //               children: [
+    //                 Center(
+    //                   child: Image.asset(
+    //                     'assets/images/requestrandom.png',
+    //                     width: MediaQuery.of(context).size.width / 4,
+    //                   ),
+    //                 ),
+    //                 // ignore: sized_box_for_whitespace
+    //                 Container(
+    //                   width: MediaQuery.of(context).size.width / 3,
+    //                   child: const Text(
+    //                     "Request Anything",
+    //                     style: TextStyle(
+    //                         fontFamily: 'MonS',
+    //                         fontSize: 15,
+    //                         color: Colors.black),
+    //                     textAlign: TextAlign.center,
+    //                   ),
+    //                 ),
+    //               ],
+    //             ),
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //   ],
+    // )
   }
 }
 
