@@ -1,4 +1,5 @@
 import 'package:doorstep/constant/colorconstant.dart';
+import 'package:floating_action_bubble/floating_action_bubble.dart';
 import 'package:flutter/material.dart';
 
 class InnerDetails extends StatefulWidget {
@@ -11,7 +12,10 @@ class InnerDetails extends StatefulWidget {
   _InnerDetailsState createState() => _InnerDetailsState();
 }
 
-class _InnerDetailsState extends State<InnerDetails> {
+class _InnerDetailsState extends State<InnerDetails>
+    with SingleTickerProviderStateMixin {
+  Animation<double>? _animation;
+  AnimationController? _animationController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,17 +102,66 @@ class _InnerDetailsState extends State<InnerDetails> {
         ),
         SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Align(
-              alignment: Alignment.bottomRight,
-              child: FloatingActionButton.extended(
-                backgroundColor: primaryColor,
-                onPressed: () {},
-                label: Text("Add Items"),
-                icon: Icon(Icons.add),
-              ),
-            ),
-          ),
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: FloatingActionBubble(
+                    // Menu items
+                    items: <Bubble>[
+                      // Floating action menu item
+                      Bubble(
+                        title: "Settings",
+                        iconColor: Colors.white,
+                        bubbleColor: Colors.blue,
+                        icon: Icons.settings,
+                        titleStyle:
+                            TextStyle(fontSize: 16, color: Colors.white),
+                        onPress: () {
+                          _animationController!.reverse();
+                        },
+                      ),
+                      // Floating action menu item
+                      Bubble(
+                        title: "Profile",
+                        iconColor: Colors.white,
+                        bubbleColor: Colors.blue,
+                        icon: Icons.people,
+                        titleStyle:
+                            TextStyle(fontSize: 16, color: Colors.white),
+                        onPress: () {
+                          _animationController!.reverse();
+                        },
+                      ),
+                      //Floating action menu item
+                      Bubble(
+                        title: "Home",
+                        iconColor: Colors.white,
+                        bubbleColor: Colors.blue,
+                        icon: Icons.home,
+                        titleStyle:
+                            TextStyle(fontSize: 16, color: Colors.white),
+                        onPress: () {
+                          // Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => Homepage()));
+                          _animationController!.reverse();
+                        },
+                      ),
+                    ],
+
+                    // animation controller
+                    animation: _animation!,
+
+                    // On pressed change animation state
+                    onPress: () => _animationController!.isCompleted
+                        ? _animationController!.reverse()
+                        : _animationController!.forward(),
+
+                    // Floating Action button Icon color
+                    iconColor: Colors.blue,
+
+                    // Flaoting Action button Icon
+                    iconData: Icons.ac_unit,
+                    backGroundColor: Colors.white,
+                  ))),
         ),
       ],
     );

@@ -89,266 +89,209 @@ class _HomePageState extends State<HomePage> {
 
   Widget _steps() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-          //First 2 boxes
-          Row(
-            children: [
-              Expanded(
+      padding: const EdgeInsets.all(18.0),
+      child: Container(
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          children: [
+            Expanded(
+              child: Card(
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
-                        context,
-                        new MaterialPageRoute(
-                            builder: (context) => const ViewDetails(
-                                  title: 'Locker Details',
-                                )));
-                  },
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    elevation: 3,
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            color: primaryColor,
-                            borderRadius: const BorderRadius.only(
-                              topLeft: const Radius.circular(20),
-                              bottomRight: const Radius.circular(20),
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "1",
-                              style: TextStyle(
-                                  fontFamily: 'MonB',
-                                  fontSize: 15,
-                                  color: Colors.white),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
+                      context,
+                      new MaterialPageRoute(
+                        builder: (context) => const ViewDetails(
+                          title: 'Locker Details',
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          height: MediaQuery.of(context).size.height / 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Center(
-                                child: Image.asset(
-                                  'assets/images/locker.png',
-                                  width: MediaQuery.of(context).size.width / 4,
-                                ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width / 3,
-                                child: const Text(
-                                  "View Locker Address",
-                                  style: const TextStyle(
-                                      fontFamily: 'MonS',
-                                      fontSize: 15,
-                                      color: Colors.black),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 15,
-              ),
-              Expanded(
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        new MaterialPageRoute(
-                            builder: (context) => const ViewDetails(
-                                  title: 'Shop and Ship',
-                                )));
-                  },
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    elevation: 3,
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            color: primaryColor,
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                            ),
-                          ),
-                          child: const Center(
-                            child: const Text(
-                              "2",
-                              style: TextStyle(
-                                  fontFamily: 'MonB',
-                                  fontSize: 15,
-                                  color: Colors.white),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          height: MediaQuery.of(context).size.height / 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Center(
-                                child: Image.asset(
-                                  'assets/images/store.png',
-                                  width: MediaQuery.of(context).size.width / 4,
-                                ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width / 3,
-                                child: const Text(
-                                  "Shope and Ship to locker",
-                                  style: const TextStyle(
-                                      fontFamily: 'MonS',
-                                      fontSize: 15,
-                                      color: Colors.black),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: FlipCard(
-                  fill: Fill
-                      .fillBack, // Fill the back side of the card to make in the same size as the front.
-                  direction: FlipDirection.HORIZONTAL, // default
-                  front: Card(
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    elevation: 3,
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            color: primaryColor,
-                            borderRadius: const BorderRadius.only(
-                              topLeft: const Radius.circular(20),
-                              bottomRight: const Radius.circular(20),
-                            ),
-                          ),
-                          child: const Center(
-                            child: const Text(
-                              "3",
-                              style: TextStyle(
-                                  fontFamily: 'MonB',
-                                  fontSize: 15,
-                                  color: Colors.white),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          height: MediaQuery.of(context).size.height / 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Center(
-                                child: Image.asset(
-                                  'assets/images/checked.png',
-                                  width: MediaQuery.of(context).size.width / 4,
-                                ),
-                              ),
-                              // ignore: sized_box_for_whitespace
-                              Container(
-                                width: MediaQuery.of(context).size.width / 3,
-                                child: const Text(
-                                  "We Inspect Locker Items",
-                                  style: TextStyle(
-                                      fontFamily: 'MonS',
-                                      fontSize: 15,
-                                      color: Colors.black),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  back: Card(
-                    color: primaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    elevation: 3,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
                       ),
-                      height: MediaQuery.of(context).size.height / 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const [
-                          Padding(
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                    ),
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.amber.withOpacity(0.2),
+                          ),
+                          child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              "This section belongs to only inspectors at the locker site it doesn't concers you please continue with you shopping \n\n Thank you",
-                              style: TextStyle(
-                                  fontFamily: 'MonM',
-                                  fontSize: 15,
-                                  color: Colors.white),
-                              textAlign: TextAlign.justify,
+                            child: Center(
+                              child: Image.asset(
+                                'assets/images/locker.png',
+                                height: 50,
+                              ),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          // width: MediaQuery.of(context).size.width / 3,
+                          child: const Text(
+                            "View Locker Address",
+                            style: const TextStyle(
+                                fontFamily: 'MonS',
+                                fontSize: 15,
+                                color: Colors.black),
+                            textAlign: TextAlign.center,
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 15,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Expanded(
+              child: Card(
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                        builder: (context) => const ViewDetails(
+                          title: 'Shop and Ship',
+                        ),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                    ),
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color(0xFFD82148).withOpacity(0.2),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Image.asset(
+                                'assets/images/store.png',
+                                height: 50,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          // width: MediaQuery.of(context).size.width / 3,
+                          child: const Text(
+                            "Shop and Ship to locker",
+                            style: const TextStyle(
+                                fontFamily: 'MonS',
+                                fontSize: 15,
+                                color: Colors.black),
+                            textAlign: TextAlign.center,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ),
-              Expanded(
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Expanded(
+              child: Card(
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.green.withOpacity(0.2),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Image.asset(
+                              'assets/images/checked.png',
+                              height: 50,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Container(
+                        // width: MediaQuery.of(context).size.width / 3,
+                        child: const Text(
+                          "We Inspect Locker Items",
+                          style: const TextStyle(
+                              fontFamily: 'MonS',
+                              fontSize: 15,
+                              color: Colors.black),
+                          textAlign: TextAlign.center,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Expanded(
+              child: Card(
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -360,75 +303,63 @@ class _HomePageState extends State<HomePage> {
                                   mainVal: 0,
                                 )));
                   },
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
                     ),
-                    elevation: 3,
-                    child: Stack(
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
                       children: [
-                        Container(
-                          height: 50,
+                        SizedBox(
                           width: 30,
-                          decoration: BoxDecoration(
-                            color: primaryColor,
-                            borderRadius: const BorderRadius.only(
-                              topLeft: const Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "4",
-                              style: const TextStyle(
-                                  fontFamily: 'MonB',
-                                  fontSize: 15,
-                                  color: Colors.white),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
                         ),
                         Container(
+                          height: 60,
+                          width: 60,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.blue.shade700.withOpacity(0.2),
                           ),
-                          height: MediaQuery.of(context).size.height / 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Center(
-                                child: Image.asset(
-                                  'assets/images/review.png',
-                                  width: MediaQuery.of(context).size.width / 4,
-                                ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Image.asset(
+                                'assets/images/review.png',
+                                height: 50,
                               ),
-                              Container(
-                                width: MediaQuery.of(context).size.width / 3,
-                                child: const Text(
-                                  "Review Locker Item",
-                                  style: const TextStyle(
-                                      fontFamily: 'MonS',
-                                      fontSize: 15,
-                                      color: Colors.black),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          // width: MediaQuery.of(context).size.width / 3,
+                          child: const Text(
+                            "Review Items",
+                            style: const TextStyle(
+                                fontFamily: 'MonS',
+                                fontSize: 15,
+                                color: Colors.black),
+                            textAlign: TextAlign.center,
+                          ),
+                        )
                       ],
                     ),
                   ),
                 ),
               ),
-            ],
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Row(
-            children: [
-              Expanded(
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Expanded(
+              child: Card(
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -440,60 +371,46 @@ class _HomePageState extends State<HomePage> {
                                   mainVal: 0,
                                 )));
                   },
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
                     ),
-                    elevation: 3,
-                    child: Stack(
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
                       children: [
-                        Container(
-                          height: 50,
+                        SizedBox(
                           width: 30,
+                        ),
+                        Container(
+                          height: 60,
+                          width: 60,
                           decoration: BoxDecoration(
-                            color: primaryColor,
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                            ),
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color(0xFFEFFFFD).withOpacity(0.9),
                           ),
-                          child: const Center(
-                            child: Text(
-                              "5",
-                              style: TextStyle(
-                                  fontFamily: 'MonB',
-                                  fontSize: 15,
-                                  color: Colors.white),
-                              textAlign: TextAlign.left,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Image.asset(
+                                'assets/images/package.png',
+                                height: 50,
+                              ),
                             ),
                           ),
                         ),
+                        SizedBox(
+                          width: 15,
+                        ),
                         Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          height: MediaQuery.of(context).size.height / 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Center(
-                                child: Image.asset(
-                                  'assets/images/package.png',
-                                  width: MediaQuery.of(context).size.width / 4,
-                                ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width / 3,
-                                child: const Text(
-                                  "Request Packing",
-                                  style: TextStyle(
-                                      fontFamily: 'MonS',
-                                      fontSize: 15,
-                                      color: Colors.black),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
+                          width: MediaQuery.of(context).size.width / 3,
+                          child: const Text(
+                            "Request Packing",
+                            style: TextStyle(
+                                fontFamily: 'MonS',
+                                fontSize: 15,
+                                color: Colors.black),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       ],
@@ -501,114 +418,69 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 15,
-              ),
-              Expanded(
-                child: FlipCard(
-                  fill: Fill
-                      .fillBack, // Fill the back side of the card to make in the same size as the front.
-                  direction: FlipDirection.HORIZONTAL, // default
-                  front: Card(
-                    color: white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    elevation: 3,
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            color: primaryColor,
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "6",
-                              style: TextStyle(
-                                  fontFamily: 'MonB',
-                                  fontSize: 15,
-                                  color: Colors.white),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          height: MediaQuery.of(context).size.height / 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Center(
-                                child: Image.asset(
-                                  'assets/images/jigsaw.png',
-                                  width: MediaQuery.of(context).size.width / 4,
-                                ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width / 3,
-                                child: const Text(
-                                  "We Consolidate, pack and ship",
-                                  style: TextStyle(
-                                      fontFamily: 'MonS',
-                                      fontSize: 15,
-                                      color: Colors.black),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Expanded(
+              child: Card(
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
                   ),
-                  back: Card(
-                    color: primaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    elevation: 3,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 30,
                       ),
-                      height: MediaQuery.of(context).size.height / 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const [
-                          Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text(
-                              "This section belongs to only inspectors at the locker site it doesn't concers you please continue with you shopping \n\n Thank you",
-                              style: TextStyle(
-                                  fontFamily: 'MonM',
-                                  fontSize: 15,
-                                  color: Colors.white),
-                              textAlign: TextAlign.justify,
-                            ),
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.green.shade700.withOpacity(0.2),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Image.asset('assets/images/jigsaw.png',
+                                height: 50),
                           ),
-                        ],
+                        ),
                       ),
-                    ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Container(
+                        child: const Text(
+                          "We Consolidate, pack and ship",
+                          style: TextStyle(
+                              fontFamily: 'MonS',
+                              fontSize: 15,
+                              color: Colors.black),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-            ],
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Row(
-            children: [
-              Expanded(
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Expanded(
+              child: Card(
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -622,73 +494,665 @@ class _HomePageState extends State<HomePage> {
                       ),
                     );
                   },
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
                     ),
-                    elevation: 3,
-                    child: Stack(
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
                       children: [
-                        Container(
-                          height: 50,
+                        SizedBox(
                           width: 30,
-                          decoration: BoxDecoration(
-                            color: primaryColor,
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "7",
-                              style: TextStyle(
-                                  fontFamily: 'MonB',
-                                  fontSize: 15,
-                                  color: Colors.white),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
                         ),
                         Container(
+                          height: 60,
+                          width: 60,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.red.shade900.withOpacity(0.2),
                           ),
-                          height: MediaQuery.of(context).size.height / 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Center(
-                                child: Image.asset(
-                                  'assets/images/shipment.png',
-                                  width: MediaQuery.of(context).size.width / 4,
-                                ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Image.asset(
+                                'assets/images/shipment.png',
+                                height: 50,
                               ),
-                              Container(
-                                width: MediaQuery.of(context).size.width / 3,
-                                child: const Text(
-                                  "Track Shipment",
-                                  style: TextStyle(
-                                      fontFamily: 'MonS',
-                                      fontSize: 15,
-                                      color: Colors.black),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width / 3,
+                          child: const Text(
+                            "Track Shipment",
+                            style: TextStyle(
+                                fontFamily: 'MonS',
+                                fontSize: 15,
+                                color: Colors.black),
+                            textAlign: TextAlign.center,
+                          ),
+                        )
                       ],
                     ),
                   ),
                 ),
               ),
-            ],
-          )
-        ],
+            ),
+            SizedBox(
+              height: 8,
+            ),
+          ],
+        ),
       ),
     );
   }
+
+  // Widget _steps() {
+  //   return Padding(
+  //     padding: const EdgeInsets.all(8.0),
+  //     child: Column(
+  //       children: [
+  //         //First 2 boxes
+  //         Row(
+  //           children: [
+  //             Expanded(
+  //               child: InkWell(
+  //                 onTap: () {
+  //                   Navigator.push(
+  //                       context,
+  //                       new MaterialPageRoute(
+  //                           builder: (context) => const ViewDetails(
+  //                                 title: 'Locker Details',
+  //                               )));
+  //                 },
+  //                 child: Card(
+  //                   shape: RoundedRectangleBorder(
+  //                     borderRadius: BorderRadius.circular(20),
+  //                   ),
+  //                   elevation: 3,
+  //                   child: Stack(
+  //                     children: [
+  //                       Container(
+  //                         height: 50,
+  //                         width: 30,
+  //                         decoration: BoxDecoration(
+  //                           color: primaryColor,
+  //                           borderRadius: const BorderRadius.only(
+  //                             topLeft: const Radius.circular(20),
+  //                             bottomRight: const Radius.circular(20),
+  //                           ),
+  //                         ),
+  //                         child: const Center(
+  //                           child: Text(
+  //                             "1",
+  //                             style: TextStyle(
+  //                                 fontFamily: 'MonB',
+  //                                 fontSize: 15,
+  //                                 color: Colors.white),
+  //                             textAlign: TextAlign.left,
+  //                           ),
+  //                         ),
+  //                       ),
+  //                       Container(
+  //                         decoration: BoxDecoration(
+  //                           borderRadius: BorderRadius.circular(20),
+  //                         ),
+  //                         height: MediaQuery.of(context).size.height / 4,
+  //                         child: Column(
+  //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //                           children: [
+  //                             Center(
+  //                               child: Image.asset(
+  //                                 'assets/images/locker.png',
+  //                                 width: MediaQuery.of(context).size.width / 4,
+  //                               ),
+  //                             ),
+  //                             Container(
+  //                               width: MediaQuery.of(context).size.width / 3,
+  //                               child: const Text(
+  //                                 "View Locker Address",
+  //                                 style: const TextStyle(
+  //                                     fontFamily: 'MonS',
+  //                                     fontSize: 15,
+  //                                     color: Colors.black),
+  //                                 textAlign: TextAlign.center,
+  //                               ),
+  //                             ),
+  //                           ],
+  //                         ),
+  //                       ),
+  //                     ],
+  //                   ),
+  //                 ),
+  //               ),
+  //             ),
+  //             const SizedBox(
+  //               width: 15,
+  //             ),
+  //             Expanded(
+  //               child: InkWell(
+  // onTap: () {
+  //   Navigator.push(
+  //       context,
+  //       new MaterialPageRoute(
+  //           builder: (context) => const ViewDetails(
+  //                 title: 'Shop and Ship',
+  //               )));
+  // },
+  //                 child: Card(
+  //                   shape: RoundedRectangleBorder(
+  //                     borderRadius: BorderRadius.circular(20),
+  //                   ),
+  //                   elevation: 3,
+  //                   child: Stack(
+  //                     children: [
+  //                       Container(
+  //                         height: 50,
+  //                         width: 30,
+  //                         decoration: BoxDecoration(
+  //                           color: primaryColor,
+  //                           borderRadius: const BorderRadius.only(
+  //                             topLeft: Radius.circular(20),
+  //                             bottomRight: Radius.circular(20),
+  //                           ),
+  //                         ),
+  //                         child: const Center(
+  //                           child: const Text(
+  //                             "2",
+  //                             style: TextStyle(
+  //                                 fontFamily: 'MonB',
+  //                                 fontSize: 15,
+  //                                 color: Colors.white),
+  //                             textAlign: TextAlign.left,
+  //                           ),
+  //                         ),
+  //                       ),
+  //                       Container(
+  //                         decoration: BoxDecoration(
+  //                           borderRadius: BorderRadius.circular(20),
+  //                         ),
+  //                         height: MediaQuery.of(context).size.height / 4,
+  //                         child: Column(
+  //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //                           children: [
+  //                             Center(
+  //                               child: Image.asset(
+  //                                 'assets/images/store.png',
+  //                                 width: MediaQuery.of(context).size.width / 4,
+  //                               ),
+  //                             ),
+  //                             Container(
+  //                               width: MediaQuery.of(context).size.width / 3,
+  //                               child: const Text(
+  //                                 "Shope and Ship to locker",
+  //                                 style: const TextStyle(
+  //                                     fontFamily: 'MonS',
+  //                                     fontSize: 15,
+  //                                     color: Colors.black),
+  //                                 textAlign: TextAlign.center,
+  //                               ),
+  //                             ),
+  //                           ],
+  //                         ),
+  //                       ),
+  //                     ],
+  //                   ),
+  //                 ),
+  //               ),
+  //             ),
+  //           ],
+  //         ),
+  //         const SizedBox(
+  //           height: 15,
+  //         ),
+  //         Row(
+  //           children: [
+  //             Expanded(
+  //               child: FlipCard(
+  //                 fill: Fill
+  //                     .fillBack, // Fill the back side of the card to make in the same size as the front.
+  //                 direction: FlipDirection.HORIZONTAL, // default
+  //                 front: Card(
+  //                   color: Colors.white,
+  //                   shape: RoundedRectangleBorder(
+  //                     borderRadius: BorderRadius.circular(20),
+  //                   ),
+  //                   elevation: 3,
+  //                   child: Stack(
+  //                     children: [
+  //                       Container(
+  //                         height: 50,
+  //                         width: 30,
+  //                         decoration: BoxDecoration(
+  //                           color: primaryColor,
+  //                           borderRadius: const BorderRadius.only(
+  //                             topLeft: const Radius.circular(20),
+  //                             bottomRight: const Radius.circular(20),
+  //                           ),
+  //                         ),
+  //                         child: const Center(
+  //                           child: const Text(
+  //                             "3",
+  //                             style: TextStyle(
+  //                                 fontFamily: 'MonB',
+  //                                 fontSize: 15,
+  //                                 color: Colors.white),
+  //                             textAlign: TextAlign.left,
+  //                           ),
+  //                         ),
+  //                       ),
+  //                       Container(
+  //                         decoration: BoxDecoration(
+  //                           borderRadius: BorderRadius.circular(20),
+  //                         ),
+  //                         height: MediaQuery.of(context).size.height / 4,
+  //                         child: Column(
+  //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //                           children: [
+  // Center(
+  //   child: Image.asset(
+  //     'assets/images/checked.png',
+  //     width: MediaQuery.of(context).size.width / 4,
+  //   ),
+  //                             ),
+  //                             // ignore: sized_box_for_whitespace
+  //                             Container(
+  //                               width: MediaQuery.of(context).size.width / 3,
+  //                               child: const Text(
+  //                                 "We Inspect Locker Items",
+  //                                 style: TextStyle(
+  //                                     fontFamily: 'MonS',
+  //                                     fontSize: 15,
+  //                                     color: Colors.black),
+  //                                 textAlign: TextAlign.center,
+  //                               ),
+  //                             ),
+  //                           ],
+  //                         ),
+  //                       ),
+  //                     ],
+  //                   ),
+  //                 ),
+  //                 back: Card(
+  //                   color: primaryColor,
+  //                   shape: RoundedRectangleBorder(
+  //                     borderRadius: BorderRadius.circular(20),
+  //                   ),
+  //                   elevation: 3,
+  //                   child: Container(
+  //                     decoration: BoxDecoration(
+  //                       borderRadius: BorderRadius.circular(20),
+  //                     ),
+  //                     height: MediaQuery.of(context).size.height / 4,
+  //                     child: Column(
+  //                       mainAxisAlignment: MainAxisAlignment.center,
+  //                       crossAxisAlignment: CrossAxisAlignment.center,
+  //                       children: const [
+  //                         Padding(
+  //                           padding: const EdgeInsets.all(8.0),
+  //                           child: Text(
+  //                             "This section belongs to only inspectors at the locker site it doesn't concers you please continue with you shopping \n\n Thank you",
+  //                             style: TextStyle(
+  //                                 fontFamily: 'MonM',
+  //                                 fontSize: 15,
+  //                                 color: Colors.white),
+  //                             textAlign: TextAlign.justify,
+  //                           ),
+  //                         ),
+  //                       ],
+  //                     ),
+  //                   ),
+  //                 ),
+  //               ),
+  //             ),
+  //             const SizedBox(
+  //               width: 15,
+  //             ),
+  //             Expanded(
+  //               child: InkWell(
+  //                 onTap: () {
+  // Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //         builder: (context) => const ReviewLocker(
+  //               title: 'Review Items',
+  //               index: 0,
+  //               mainVal: 0,
+  //             )));
+  //                 },
+  //                 child: Card(
+  //                   shape: RoundedRectangleBorder(
+  //                     borderRadius: BorderRadius.circular(20),
+  //                   ),
+  //                   elevation: 3,
+  //                   child: Stack(
+  //                     children: [
+  //                       Container(
+  //                         height: 50,
+  //                         width: 30,
+  //                         decoration: BoxDecoration(
+  //                           color: primaryColor,
+  //                           borderRadius: const BorderRadius.only(
+  //                             topLeft: const Radius.circular(20),
+  //                             bottomRight: Radius.circular(20),
+  //                           ),
+  //                         ),
+  //                         child: const Center(
+  //                           child: Text(
+  //                             "4",
+  //                             style: const TextStyle(
+  //                                 fontFamily: 'MonB',
+  //                                 fontSize: 15,
+  //                                 color: Colors.white),
+  //                             textAlign: TextAlign.left,
+  //                           ),
+  //                         ),
+  //                       ),
+  //                       Container(
+  //                         decoration: BoxDecoration(
+  //                           borderRadius: BorderRadius.circular(20),
+  //                         ),
+  //                         height: MediaQuery.of(context).size.height / 4,
+  //                         child: Column(
+  //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //                           children: [
+  // Center(
+  //   child: Image.asset(
+  //     'assets/images/review.png',
+  //     width: MediaQuery.of(context).size.width / 4,
+  //   ),
+  // ),
+  //                             Container(
+  //                               width: MediaQuery.of(context).size.width / 3,
+  //                               child: const Text(
+  //                                 "Review Locker Item",
+  //                                 style: const TextStyle(
+  //                                     fontFamily: 'MonS',
+  //                                     fontSize: 15,
+  //                                     color: Colors.black),
+  //                                 textAlign: TextAlign.center,
+  //                               ),
+  //                             ),
+  //                           ],
+  //                         ),
+  //                       ),
+  //                     ],
+  //                   ),
+  //                 ),
+  //               ),
+  //             ),
+  //           ],
+  //         ),
+  //         const SizedBox(
+  //           height: 15,
+  //         ),
+  //         Row(
+  //           children: [
+  //             Expanded(
+  //               child: InkWell(
+  // onTap: () {
+  //   Navigator.push(
+  //       context,
+  //       MaterialPageRoute(
+  //           builder: (context) => const ReviewLocker(
+  //                 title: 'Request Packing',
+  //                 index: 1,
+  //                 mainVal: 0,
+  //               )));
+  // },
+  //                 child: Card(
+  //                   shape: RoundedRectangleBorder(
+  //                     borderRadius: BorderRadius.circular(20),
+  //                   ),
+  //                   elevation: 3,
+  //                   child: Stack(
+  //                     children: [
+  //                       Container(
+  //                         height: 50,
+  //                         width: 30,
+  //                         decoration: BoxDecoration(
+  //                           color: primaryColor,
+  //                           borderRadius: const BorderRadius.only(
+  //                             topLeft: Radius.circular(20),
+  //                             bottomRight: Radius.circular(20),
+  //                           ),
+  //                         ),
+  //                         child: const Center(
+  //                           child: Text(
+  //                             "5",
+  //                             style: TextStyle(
+  //                                 fontFamily: 'MonB',
+  //                                 fontSize: 15,
+  //                                 color: Colors.white),
+  //                             textAlign: TextAlign.left,
+  //                           ),
+  //                         ),
+  //                       ),
+  //                       Container(
+  //                         decoration: BoxDecoration(
+  //                           borderRadius: BorderRadius.circular(20),
+  //                         ),
+  //                         height: MediaQuery.of(context).size.height / 4,
+  //                         child: Column(
+  //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //                           children: [
+  // Center(
+  //   child: Image.asset(
+  //     'assets/images/package.png',
+  //     width: MediaQuery.of(context).size.width / 4,
+  //   ),
+  // ),
+  // Container(
+  //   width: MediaQuery.of(context).size.width / 3,
+  //   child: const Text(
+  //     "Request Packing",
+  //     style: TextStyle(
+  //         fontFamily: 'MonS',
+  //         fontSize: 15,
+  //         color: Colors.black),
+  //     textAlign: TextAlign.center,
+  //   ),
+  // ),
+  //                           ],
+  //                         ),
+  //                       ),
+  //                     ],
+  //                   ),
+  //                 ),
+  //               ),
+  //             ),
+  //             const SizedBox(
+  //               width: 15,
+  //             ),
+  //             Expanded(
+  //               child: FlipCard(
+  //                 fill: Fill
+  //                     .fillBack, // Fill the back side of the card to make in the same size as the front.
+  //                 direction: FlipDirection.HORIZONTAL, // default
+  //                 front: Card(
+  //                   color: white,
+  //                   shape: RoundedRectangleBorder(
+  //                     borderRadius: BorderRadius.circular(20),
+  //                   ),
+  //                   elevation: 3,
+  //                   child: Stack(
+  //                     children: [
+  //                       Container(
+  //                         height: 50,
+  //                         width: 30,
+  //                         decoration: BoxDecoration(
+  //                           color: primaryColor,
+  //                           borderRadius: const BorderRadius.only(
+  //                             topLeft: Radius.circular(20),
+  //                             bottomRight: Radius.circular(20),
+  //                           ),
+  //                         ),
+  //                         child: const Center(
+  //                           child: Text(
+  //                             "6",
+  //                             style: TextStyle(
+  //                                 fontFamily: 'MonB',
+  //                                 fontSize: 15,
+  //                                 color: Colors.white),
+  //                             textAlign: TextAlign.left,
+  //                           ),
+  //                         ),
+  //                       ),
+  //                       Container(
+  //                         decoration: BoxDecoration(
+  //                           borderRadius: BorderRadius.circular(20),
+  //                         ),
+  //                         height: MediaQuery.of(context).size.height / 4,
+  //                         child: Column(
+  //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //                           children: [
+  // Center(
+  //   child: Image.asset(
+  //     'assets/images/jigsaw.png',
+  //     width: MediaQuery.of(context).size.width / 4,
+  //   ),
+  // ),
+  // Container(
+  //   width: MediaQuery.of(context).size.width / 3,
+  //   child: const Text(
+  //     "We Consolidate, pack and ship",
+  //     style: TextStyle(
+  //         fontFamily: 'MonS',
+  //         fontSize: 15,
+  //         color: Colors.black),
+  //     textAlign: TextAlign.center,
+  //   ),
+  // ),
+  //                           ],
+  //                         ),
+  //                       ),
+  //                     ],
+  //                   ),
+  //                 ),
+  //                 back: Card(
+  //                   color: primaryColor,
+  //                   shape: RoundedRectangleBorder(
+  //                     borderRadius: BorderRadius.circular(20),
+  //                   ),
+  //                   elevation: 3,
+  //                   child: Container(
+  //                     decoration: BoxDecoration(
+  //                       borderRadius: BorderRadius.circular(20),
+  //                     ),
+  //                     height: MediaQuery.of(context).size.height / 4,
+  //                     child: Column(
+  //                       mainAxisAlignment: MainAxisAlignment.center,
+  //                       crossAxisAlignment: CrossAxisAlignment.center,
+  //                       children: const [
+  //                         Padding(
+  //                           padding: EdgeInsets.all(8.0),
+  //                           child: Text(
+  //                             "This section belongs to only inspectors at the locker site it doesn't concers you please continue with you shopping \n\n Thank you",
+  //                             style: TextStyle(
+  //                                 fontFamily: 'MonM',
+  //                                 fontSize: 15,
+  //                                 color: Colors.white),
+  //                             textAlign: TextAlign.justify,
+  //                           ),
+  //                         ),
+  //                       ],
+  //                     ),
+  //                   ),
+  //                 ),
+  //               ),
+  //             ),
+  //           ],
+  //         ),
+  //         const SizedBox(
+  //           height: 15,
+  //         ),
+  //         Row(
+  //           children: [
+  //             Expanded(
+  //               child: InkWell(
+  //                 onTap: () {
+  // Navigator.push(
+  //   context,
+  //   MaterialPageRoute(
+  //     builder: (context) => const ReviewLocker(
+  //       title: 'Shippment',
+  //       index: 0,
+  //       mainVal: 1,
+  //     ),
+  //   ),
+  // );
+  //                 },
+  //                 child: Card(
+  //                   shape: RoundedRectangleBorder(
+  //                     borderRadius: BorderRadius.circular(20),
+  //                   ),
+  //                   elevation: 3,
+  //                   child: Stack(
+  //                     children: [
+  //                       Container(
+  //                         height: 50,
+  //                         width: 30,
+  //                         decoration: BoxDecoration(
+  //                           color: primaryColor,
+  //                           borderRadius: const BorderRadius.only(
+  //                             topLeft: Radius.circular(20),
+  //                             bottomRight: Radius.circular(20),
+  //                           ),
+  //                         ),
+  //                         child: const Center(
+  //                           child: Text(
+  //                             "7",
+  //                             style: TextStyle(
+  //                                 fontFamily: 'MonB',
+  //                                 fontSize: 15,
+  //                                 color: Colors.white),
+  //                             textAlign: TextAlign.left,
+  //                           ),
+  //                         ),
+  //                       ),
+  //                       Container(
+  //                         decoration: BoxDecoration(
+  //                           borderRadius: BorderRadius.circular(20),
+  //                         ),
+  //                         height: MediaQuery.of(context).size.height / 4,
+  //                         child: Column(
+  //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //                           children: [
+  // Center(
+  //   child: Image.asset(
+  //     'assets/images/shipment.png',
+  //     width: MediaQuery.of(context).size.width / 4,
+  //   ),
+  // ),
+  // Container(
+  //   width: MediaQuery.of(context).size.width / 3,
+  //   child: const Text(
+  //     "Track Shipment",
+  //     style: TextStyle(
+  //         fontFamily: 'MonS',
+  //         fontSize: 15,
+  //         color: Colors.black),
+  //     textAlign: TextAlign.center,
+  //   ),
+  //                             ),
+  //                           ],
+  //                         ),
+  //                       ),
+  //                     ],
+  //                   ),
+  //                 ),
+  //               ),
+  //             ),
+  //           ],
+  //         )
+  //       ],
+  //     ),
+  //   );
+  // }
 
   Widget _drawer() {
     return Padding(

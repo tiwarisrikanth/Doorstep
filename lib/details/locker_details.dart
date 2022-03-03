@@ -45,130 +45,149 @@ class _ViewDetailsState extends State<ViewDetails> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Expanded(
+        child: Container(
+          height: MediaQuery.of(context).size.height / 2,
+          child: Column(
+            children: [
+              Expanded(
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => InnerDetails(
+                        new MaterialPageRoute(
+                          builder: (context) => const InnerDetails(
                             title: 'Locker Address',
                             id: 1,
                           ),
                         ),
                       );
                     },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      elevation: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        height: MediaQuery.of(context).size.height / 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/images/address.png',
-                                width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.greenAccent.withOpacity(0.2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/address.png',
+                                  height: 50,
+                                ),
                               ),
                             ),
-                            // ignore: sized_box_for_whitespace
-                            Container(
-                              width: MediaQuery.of(context).size.width / 3,
-                              child: const Text(
-                                "Locker Address",
-                                style: TextStyle(
-                                    fontFamily: 'MonS',
-                                    fontSize: 15,
-                                    color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            // width: MediaQuery.of(context).size.width / 3,
+                            child: const Text(
+                              "Locker Address",
+                              style: const TextStyle(
+                                  fontFamily: 'MonS',
+                                  fontSize: 15,
+                                  color: Colors.black),
+                              textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
+              ),
+              Expanded(
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => InnerDetails(
+                        new MaterialPageRoute(
+                          builder: (context) => const InnerDetails(
                             title: 'Add Expected Items',
                             id: 2,
                           ),
                         ),
                       );
-                      // Navigator.push(
-                      //     context,
-                      //     new MaterialPageRoute(
-                      //         builder: (context) => ViewDetails(
-                      //               title: 'Track Shipment',
-                      //             )));
                     },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      elevation: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        height: MediaQuery.of(context).size.height / 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/images/expected.png',
-                                width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.orangeAccent.withOpacity(0.2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/expected.png',
+                                  height: 50,
+                                ),
                               ),
                             ),
-                            // ignore: sized_box_for_whitespace
-                            Container(
-                              width: MediaQuery.of(context).size.width / 3,
-                              child: const Text(
-                                "Add Expected Items",
-                                style: TextStyle(
-                                    fontFamily: 'MonS',
-                                    fontSize: 15,
-                                    color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            // width: MediaQuery.of(context).size.width / 3,
+                            child: const Text(
+                              "Add Expected Items",
+                              style: const TextStyle(
+                                  fontFamily: 'MonS',
+                                  fontSize: 15,
+                                  color: Colors.black),
+                              textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Expanded(
+              ),
+              //Here
+              Expanded(
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -182,47 +201,60 @@ class _ViewDetailsState extends State<ViewDetails> {
                         ),
                       );
                     },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      elevation: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        height: MediaQuery.of(context).size.height / 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/images/review.png',
-                                width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.blue.withOpacity(0.2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/review.png',
+                                  height: 50,
+                                ),
                               ),
                             ),
-                            // ignore: sized_box_for_whitespace
-                            Container(
-                              width: MediaQuery.of(context).size.width / 3,
-                              child: const Text(
-                                "Review Locker Items",
-                                style: TextStyle(
-                                    fontFamily: 'MonS',
-                                    fontSize: 15,
-                                    color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            // width: MediaQuery.of(context).size.width / 3,
+                            child: const Text(
+                              "Review Locker Items",
+                              style: const TextStyle(
+                                  fontFamily: 'MonS',
+                                  fontSize: 15,
+                                  color: Colors.black),
+                              textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
+              ),
+              Expanded(
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -236,46 +268,284 @@ class _ViewDetailsState extends State<ViewDetails> {
                         ),
                       );
                     },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      elevation: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        height: MediaQuery.of(context).size.height / 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/images/additems.png',
-                                width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: primaryColor.withOpacity(0.2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/additems.png',
+                                  height: 50,
+                                ),
                               ),
                             ),
-                            // ignore: sized_box_for_whitespace
-                            Container(
-                              width: MediaQuery.of(context).size.width / 3,
-                              child: const Text(
-                                "Box my Items",
-                                style: TextStyle(
-                                    fontFamily: 'MonS',
-                                    fontSize: 15,
-                                    color: Colors.black),
-                                textAlign: TextAlign.center,
-                              ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            // width: MediaQuery.of(context).size.width / 3,
+                            child: const Text(
+                              "Box my Items",
+                              style: const TextStyle(
+                                  fontFamily: 'MonS',
+                                  fontSize: 15,
+                                  color: Colors.black),
+                              textAlign: TextAlign.center,
                             ),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                   ),
                 ),
-              ],
-            )
-          ],
+              ),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //       child: InkWell(
+              //         onTap: () {
+              //           Navigator.push(
+              //             context,
+              //             MaterialPageRoute(
+              //               builder: (context) => InnerDetails(
+              // title: 'Locker Address',
+              // id: 1,
+              //               ),
+              //             ),
+              //           );
+              //         },
+              //         child: Card(
+              //           shape: RoundedRectangleBorder(
+              //             borderRadius: BorderRadius.circular(20),
+              //           ),
+              //           elevation: 3,
+              //           child: Container(
+              //             decoration: BoxDecoration(
+              //               borderRadius: BorderRadius.circular(20),
+              //             ),
+              //             height: MediaQuery.of(context).size.height / 4,
+              //             child: Column(
+              //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //               children: [
+              //                 Center(
+              //                   child: Image.asset(
+              //                     'assets/images/address.png',
+              //                     width: MediaQuery.of(context).size.width / 4,
+              //                   ),
+              //                 ),
+              //                 // ignore: sized_box_for_whitespace
+              //                 Container(
+              //                   width: MediaQuery.of(context).size.width / 3,
+              //                   child: const Text(
+              //                     "Locker Address",
+              //                     style: TextStyle(
+              //                         fontFamily: 'MonS',
+              //                         fontSize: 15,
+              //                         color: Colors.black),
+              //                     textAlign: TextAlign.center,
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //     const SizedBox(
+              //       width: 20,
+              //     ),
+              //     Expanded(
+              //       child: InkWell(
+              //         onTap: () {
+              //           Navigator.push(
+              //             context,
+              //             MaterialPageRoute(
+              //               builder: (context) => InnerDetails(
+              // title: 'Add Expected Items',
+              // id: 2,
+              //               ),
+              //             ),
+              //           );
+              //           // Navigator.push(
+              //           //     context,
+              //           //     new MaterialPageRoute(
+              //           //         builder: (context) => ViewDetails(
+              //           //               title: 'Track Shipment',
+              //           //             )));
+              //         },
+              //         child: Card(
+              //           shape: RoundedRectangleBorder(
+              //             borderRadius: BorderRadius.circular(20),
+              //           ),
+              //           elevation: 3,
+              //           child: Container(
+              //             decoration: BoxDecoration(
+              //               borderRadius: BorderRadius.circular(20),
+              //             ),
+              //             height: MediaQuery.of(context).size.height / 4,
+              //             child: Column(
+              //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //               children: [
+              //                 Center(
+              //                   child: Image.asset(
+              //                     'assets/images/expected.png',
+              //                     width: MediaQuery.of(context).size.width / 4,
+              //                   ),
+              //                 ),
+              //                 // ignore: sized_box_for_whitespace
+              //                 Container(
+              //                   width: MediaQuery.of(context).size.width / 3,
+              //                   child: const Text(
+              //                     "Add Expected Items",
+              //                     style: TextStyle(
+              //                         fontFamily: 'MonS',
+              //                         fontSize: 15,
+              //                         color: Colors.black),
+              //                     textAlign: TextAlign.center,
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //       child: InkWell(
+              //         onTap: () {
+              // Navigator.push(
+              //   context,
+              //   new MaterialPageRoute(
+              //     builder: (context) => ReviewLocker(
+              //       title: 'Review Locker Items',
+              //       mainVal: 0,
+              //       index: 0,
+              //     ),
+              //   ),
+              // );
+              //         },
+              //         child: Card(
+              //           shape: RoundedRectangleBorder(
+              //             borderRadius: BorderRadius.circular(20),
+              //           ),
+              //           elevation: 3,
+              //           child: Container(
+              //             decoration: BoxDecoration(
+              //               borderRadius: BorderRadius.circular(20),
+              //             ),
+              //             height: MediaQuery.of(context).size.height / 4,
+              //             child: Column(
+              //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //               children: [
+              //                 Center(
+              //                   child: Image.asset(
+              //                     'assets/images/review.png',
+              //                     width: MediaQuery.of(context).size.width / 4,
+              //                   ),
+              //                 ),
+              //                 // ignore: sized_box_for_whitespace
+              //                 Container(
+              //                   width: MediaQuery.of(context).size.width / 3,
+              //                   child: const Text(
+              //                     "Review Locker Items",
+              //                     style: TextStyle(
+              //                         fontFamily: 'MonS',
+              //                         fontSize: 15,
+              //                         color: Colors.black),
+              //                     textAlign: TextAlign.center,
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //     const SizedBox(
+              //       width: 20,
+              //     ),
+              //     Expanded(
+              //       child: InkWell(
+              //         onTap: () {
+              // Navigator.push(
+              //   context,
+              //   new MaterialPageRoute(
+              //     builder: (context) => ReviewLocker(
+              //       title: 'Box My Items',
+              //       mainVal: 0,
+              //       index: 1,
+              //     ),
+              //   ),
+              // );
+              //         },
+              //         child: Card(
+              //           shape: RoundedRectangleBorder(
+              //             borderRadius: BorderRadius.circular(20),
+              //           ),
+              //           elevation: 3,
+              //           child: Container(
+              //             decoration: BoxDecoration(
+              //               borderRadius: BorderRadius.circular(20),
+              //             ),
+              //             height: MediaQuery.of(context).size.height / 4,
+              //             child: Column(
+              //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //               children: [
+              //                 Center(
+              //                   child: Image.asset(
+              //                     'assets/images/additems.png',
+              //                     width: MediaQuery.of(context).size.width / 4,
+              //                   ),
+              //                 ),
+              //                 // ignore: sized_box_for_whitespace
+              //                 Container(
+              //                   width: MediaQuery.of(context).size.width / 3,
+              //                   child: const Text(
+              //                     "Box my Items",
+              //                     style: TextStyle(
+              //                         fontFamily: 'MonS',
+              //                         fontSize: 15,
+              //                         color: Colors.black),
+              //                     textAlign: TextAlign.center,
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // )
+            ],
+          ),
         ),
       ),
     );
