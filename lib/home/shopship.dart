@@ -1,3 +1,4 @@
+import 'package:doorstep/Requests/shopshipdetails.dart';
 import 'package:doorstep/constant/colorconstant.dart';
 import 'package:doorstep/repositories/shopshiprepo.dart';
 import 'package:flutter/material.dart';
@@ -100,15 +101,19 @@ class _ShopShipState extends State<ShopShip>
     return Stack(
       children: [
         Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "Data from API for Added items will be shown here",
-                textAlign: TextAlign.center,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Data from API for Added items will be shown here",
+                  textAlign: TextAlign.center,
+                ),
+                // ShopShipInnerDetail
+              ],
+            ),
           ),
         ),
         SafeArea(
@@ -126,7 +131,7 @@ class _ShopShipState extends State<ShopShip>
                 spacing: 10,
                 elevation: 19,
                 spaceBetweenChildren: 10,
-                closeManually: true,
+                closeManually: false,
                 children: [
                   SpeedDialChild(
                     child: const Icon(
@@ -141,7 +146,15 @@ class _ShopShipState extends State<ShopShip>
                       fontSize: 12,
                     ),
                     onTap: () {
-                      print('Share Tapped');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ShopShipInnerDetail(
+                            requestID: 1,
+                            title: 'Personal Shopper Request',
+                          ),
+                        ),
+                      );
                     },
                   ),
                 ],
@@ -183,7 +196,7 @@ class _ShopShipState extends State<ShopShip>
                 spacing: 10,
                 elevation: 19,
                 spaceBetweenChildren: 10,
-                closeManually: true,
+                closeManually: false,
                 children: [
                   SpeedDialChild(
                     child: const Icon(
@@ -198,7 +211,15 @@ class _ShopShipState extends State<ShopShip>
                       fontSize: 12,
                     ),
                     onTap: () {
-                      print('Share Tapped');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ShopShipInnerDetail(
+                            requestID: 2,
+                            title: 'Package Pickup Request',
+                          ),
+                        ),
+                      );
                     },
                   ),
                 ],
@@ -240,7 +261,7 @@ class _ShopShipState extends State<ShopShip>
                 spacing: 10,
                 elevation: 19,
                 spaceBetweenChildren: 10,
-                closeManually: true,
+                closeManually: false,
                 children: [
                   SpeedDialChild(
                     child: const Icon(
@@ -255,7 +276,15 @@ class _ShopShipState extends State<ShopShip>
                       fontSize: 12,
                     ),
                     onTap: () {
-                      print('Share Tapped');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ShopShipInnerDetail(
+                            requestID: 3,
+                            title: 'Request Tailoring',
+                          ),
+                        ),
+                      );
                     },
                   ),
                 ],
@@ -297,7 +326,7 @@ class _ShopShipState extends State<ShopShip>
                 spacing: 10,
                 elevation: 19,
                 spaceBetweenChildren: 10,
-                closeManually: true,
+                closeManually: false,
                 children: [
                   SpeedDialChild(
                     child: const Icon(
@@ -312,7 +341,15 @@ class _ShopShipState extends State<ShopShip>
                       fontSize: 12,
                     ),
                     onTap: () {
-                      print('Share Tapped');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ShopShipInnerDetail(
+                            requestID: 4,
+                            title: 'Request Medicine',
+                          ),
+                        ),
+                      );
                     },
                   ),
                 ],
@@ -354,7 +391,7 @@ class _ShopShipState extends State<ShopShip>
                 spacing: 10,
                 elevation: 19,
                 spaceBetweenChildren: 10,
-                closeManually: true,
+                closeManually: false,
                 children: [
                   SpeedDialChild(
                     child: const Icon(
@@ -369,7 +406,15 @@ class _ShopShipState extends State<ShopShip>
                       fontSize: 12,
                     ),
                     onTap: () {
-                      print('Share Tapped');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ShopShipInnerDetail(
+                            requestID: 5,
+                            title: 'Request Anything',
+                          ),
+                        ),
+                      );
                     },
                   ),
                 ],
