@@ -46,9 +46,12 @@ class _ViewDetailsState extends State<ViewDetails> {
       padding: const EdgeInsets.all(8.0),
       child: SingleChildScrollView(
         child: Container(
-          height: MediaQuery.of(context).size.height / 2,
+          height: MediaQuery.of(context).size.height / 1.7,
           child: Column(
             children: [
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: Card(
                   elevation: 3,
@@ -70,7 +73,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                        color: Colors.greenAccent.withOpacity(0.2),
                       ),
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -115,6 +118,9 @@ class _ViewDetailsState extends State<ViewDetails> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: Card(
                   elevation: 3,
@@ -136,7 +142,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                        color: Colors.orangeAccent.withOpacity(0.2),
                       ),
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -182,6 +188,9 @@ class _ViewDetailsState extends State<ViewDetails> {
                 ),
               ),
               //Here
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: Card(
                   elevation: 3,
@@ -204,7 +213,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                        color: Colors.blue.withOpacity(0.2),
                       ),
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -249,6 +258,9 @@ class _ViewDetailsState extends State<ViewDetails> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: Card(
                   elevation: 3,
@@ -271,7 +283,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                        color: primaryColor.withOpacity(0.2),
                       ),
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -559,9 +571,12 @@ class _ViewDetailsState extends State<ViewDetails> {
       padding: const EdgeInsets.all(8.0),
       child: SingleChildScrollView(
         child: Container(
-          height: MediaQuery.of(context).size.height / 1.5,
+          height: MediaQuery.of(context).size.height / 1.2,
           child: Column(
             children: [
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: Card(
                   elevation: 3,
@@ -583,7 +598,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                        color: Colors.greenAccent.withOpacity(0.2),
                       ),
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -628,6 +643,9 @@ class _ViewDetailsState extends State<ViewDetails> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: Card(
                   elevation: 3,
@@ -649,7 +667,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                        color: Colors.orangeAccent.withOpacity(0.2),
                       ),
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -695,6 +713,9 @@ class _ViewDetailsState extends State<ViewDetails> {
                 ),
               ),
               //Here
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: Card(
                   elevation: 3,
@@ -716,7 +737,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                        color: Colors.blue.withOpacity(0.2),
                       ),
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -761,6 +782,9 @@ class _ViewDetailsState extends State<ViewDetails> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: Card(
                   elevation: 3,
@@ -782,7 +806,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                        color: primaryColor.withOpacity(0.2),
                       ),
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -826,6 +850,9 @@ class _ViewDetailsState extends State<ViewDetails> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: Card(
                   elevation: 3,
@@ -847,7 +874,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                        color: Colors.red.shade900.withOpacity(0.3),
                       ),
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -860,7 +887,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                             width: 60,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              color: Colors.blue.withOpacity(0.2),
+                              color: Colors.red.shade900.withOpacity(0.3),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -891,6 +918,9 @@ class _ViewDetailsState extends State<ViewDetails> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: Card(
                   elevation: 3,
@@ -912,7 +942,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                        color: Colors.green.shade900.withOpacity(0.3),
                       ),
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -925,7 +955,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                             width: 60,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              color: primaryColor.withOpacity(0.2),
+                              color: Colors.green.shade900.withOpacity(0.3),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),

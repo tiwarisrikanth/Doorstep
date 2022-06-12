@@ -1,5 +1,11 @@
+import 'dart:convert';
+
+import 'package:doorstep/constant/apiconstants.dart';
 import 'package:doorstep/constant/colorconstant.dart';
 import 'package:doorstep/home/home.dart';
+import 'package:doorstep/repositories/majo_repo.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
 import 'forgotpassword.dart';
@@ -11,6 +17,11 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool agree = false;
+
+  //Controllers
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,6 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           TextField(
+                            controller: emailController,
                             cursorColor: primaryColor,
                             decoration: InputDecoration(
                               prefixIcon: Icon(
@@ -87,6 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           const SizedBox(height: 20.0),
                           TextField(
+                            controller: passwordController,
                             cursorColor: primaryColor,
                             decoration: InputDecoration(
                               suffixIcon: Icon(Icons.visibility),
@@ -122,16 +135,18 @@ class _LoginPageState extends State<LoginPage> {
                                   },
                                 ),
                               ),
-                              InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    agree = !agree;
-                                  });
-                                },
-                                child: const Text(
-                                  'I have read and accept terms and conditions',
-                                  style: TextStyle(color: Colors.grey),
-                                  overflow: TextOverflow.ellipsis,
+                              Expanded(
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      agree = !agree;
+                                    });
+                                  },
+                                  child: const Text(
+                                    'I have read and accept terms and conditions',
+                                    style: TextStyle(color: Colors.grey),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
                               )
                             ],
@@ -140,9 +155,11 @@ class _LoginPageState extends State<LoginPage> {
                           InkWell(
                             onTap: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ForgotPassword()));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ForgotPassword(),
+                                ),
+                              );
                             },
                             child: Container(
                               alignment: const Alignment(1.0, 0.0),
@@ -163,7 +180,12 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           const SizedBox(height: 40.0),
                           InkWell(
-                            onTap: () {
+                            onTap: () async {
+                              String userEmail = emailController.text;
+                              String userPassword = passwordController.text;
+
+                              // await userLogin(userEmail, userPassword, context);
+
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
@@ -179,14 +201,7 @@ class _LoginPageState extends State<LoginPage> {
                                 color: primaryColor,
                                 elevation: 7.0,
                                 child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      new MaterialPageRoute(
-                                        builder: (context) => HomePage(),
-                                      ),
-                                    );
-                                  },
+                                  onTap: () {},
                                   child: Center(
                                     child: Text(
                                       'LOGIN',

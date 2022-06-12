@@ -36,6 +36,7 @@ dependencies:
   flutter_date_picker_timeline: ^0.3.3
   floating_action_bubble: ^1.1.4
   flutter_speed_dial: ^5.0.0+1
+  shared_preferences: ^2.0.13
   cupertino_icons: ^1.0.2
   pin_code_fields: ^7.3.0
   timer_button: ^2.0.0

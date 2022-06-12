@@ -62,6 +62,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _homePart() {
     return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -115,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
+                      color: Colors.amber.withOpacity(0.2),
                     ),
                     width: MediaQuery.of(context).size.width,
                     child: Row(
@@ -183,7 +184,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
+                      color: Color(0xFFD82148).withOpacity(0.2),
                     ),
                     width: MediaQuery.of(context).size.width,
                     child: Row(
@@ -242,7 +243,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
+                      color: Colors.green.withOpacity(0.2),
                     ),
                     width: MediaQuery.of(context).size.width,
                     child: Row(
@@ -310,7 +311,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
+                      color: Colors.blue.shade700.withOpacity(0.2),
                     ),
                     width: MediaQuery.of(context).size.width,
                     child: Row(
@@ -378,7 +379,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
+                      color: Color(0xFF151D3B).withOpacity(0.2),
                     ),
                     width: MediaQuery.of(context).size.width,
                     child: Row(
@@ -391,7 +392,7 @@ class _HomePageState extends State<HomePage> {
                           width: 60,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            color: Color(0xFFEFFFFD).withOpacity(0.9),
+                            color: Color(0xFF151D3B).withOpacity(0.2),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -437,7 +438,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
+                      color: Colors.green.shade700.withOpacity(0.2),
                     ),
                     width: MediaQuery.of(context).size.width,
                     child: Row(
@@ -465,12 +466,12 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Container(
                           child: const Text(
-                            "We Consolidate, pack and ship",
+                            "We Consolidate, \n pack and ship",
                             style: TextStyle(
                                 fontFamily: 'MonS',
                                 fontSize: 15,
                                 color: Colors.black),
-                            textAlign: TextAlign.center,
+                            textAlign: TextAlign.left,
                           ),
                         ),
                       ],
@@ -504,7 +505,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
+                      color: Colors.red.shade900.withOpacity(0.2),
                     ),
                     width: MediaQuery.of(context).size.width,
                     child: Row(

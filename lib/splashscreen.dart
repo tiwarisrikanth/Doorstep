@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:doorstep/constant/colorconstant.dart';
 import 'package:doorstep/auth/loginpage.dart';
+import 'package:doorstep/home/home.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -14,16 +16,26 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    _token();
     super.initState();
-    Timer(
-      Duration(seconds: 3),
-      () => Navigator.pushReplacement(
+    Timer(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => LoginPage(),
+          builder: (context) => token == "" ? LoginPage() : HomePage(),
         ),
-      ),
-    );
+      );
+    });
+  }
+
+  String token = "";
+
+  void _token() async {
+    SharedPreferences _tokendata = await SharedPreferences.getInstance();
+    String? mainToken = _tokendata.getString('token');
+    setState(() {
+      token = mainToken!;
+    });
   }
 
   @override

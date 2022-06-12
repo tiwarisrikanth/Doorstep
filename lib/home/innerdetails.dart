@@ -1,5 +1,6 @@
 import 'package:doorstep/Requests/expecteditems.dart';
 import 'package:doorstep/constant/colorconstant.dart';
+import 'package:doorstep/repositories/majo_repo.dart';
 import 'package:floating_action_bubble/floating_action_bubble.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -36,13 +37,15 @@ class _InnerDetailsState extends State<InnerDetails>
           ),
         ),
       ),
-      body: widget.id == 1
-          ? _lockerAddress()
-          : widget.id == 2
-              ? _addExpectedItems()
-              : Container(),
+      body: Center(child: Text("API Data Here")),
+      // body: widget.id == 1
+      //     ? _lockerAddress()
+      //     : widget.id == 2
+      //         ? _addExpectedItems()
+      //         : Container(),
       floatingActionButton: Visibility(
-        visible: widget.id == 2 ? true : false,
+        // visible: widget.id == 2 ? true : false,
+        visible: true,
         child: SpeedDial(
           animatedIcon: AnimatedIcons.menu_close,
           openCloseDial: isDialOpen,
@@ -85,49 +88,32 @@ class _InnerDetailsState extends State<InnerDetails>
   }
 
   Widget _lockerAddress() {
-    return Center(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Text(
-              //   "Your Locker",
-              //   style: TextStyle(
-              //     fontFamily: 'MonS',
-              //     fontSize: 15,
-              //     color: black,
-              //   ),
-              // ),
-              // Padding(
-              //   padding: const EdgeInsets.all(8.0),
-              //   child: Text(
-              //     "To Temporarily store all your purchases in india before shipping. Shop from anywhere in india & ship to this locker address...",
-              //     style: TextStyle(
-              //       fontFamily: 'MonR',
-              //       fontSize: 15,
-              //       color: black,
-              //     ),
-              //     textAlign: TextAlign.justify,
-              //   ),
-              // ),
-
-              Text(
-                "Data From API will be show here for Locating Locker address...",
-                style: TextStyle(
-                  fontFamily: 'MonS',
-                  fontSize: 15,
-                  color: black,
+    return FutureBuilder(
+        future: getLockerAddress(),
+        builder: (context, AsyncSnapshot snapshot) {
+          return Center(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      snapshot.data[0]['addressLine1'].toString(),
+                      style: TextStyle(
+                        fontFamily: 'MonS',
+                        fontSize: 15,
+                        color: black,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
-                textAlign: TextAlign.center,
               ),
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+          );
+        });
   }
 
   Widget _addExpectedItems() {
